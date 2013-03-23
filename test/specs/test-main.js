@@ -1,6 +1,6 @@
 //Load require.js config files
 require([
-	'require-test-config'
+	'../require-test-config'
 ], function() {
 
 	//Kick off Jasmine tests
@@ -22,10 +22,10 @@ require([
 		var jasmineEnv = jasmine.getEnv()
 		setupReporters(jasmineEnv)
 
-		var specs = [
-			'specs/amd/basic'
-		]
-		require(specs, function() {
+		require([
+			'specs/basic'
+			, 'specs/single-event'
+		], function() {
 			jasmineEnv.execute()
 		})
 	})

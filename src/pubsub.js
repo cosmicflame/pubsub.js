@@ -9,11 +9,27 @@
 		root.pubsub = factory();
 	}
 }(this, function () {
-	return {
+	var PubSub = function() {
 
-		pub : function() {},
+		var subscribers = {}
 
-		sub : function() {}
+		this.pub = function(eventName, data) {
+			if (subscribers.hasOwnProperty(eventName)) {
+				subscribers[eventName].forEach(function(callback) {
+					callback(data)
+				})
+			}
+		}
 
-	};
+		this.sub = function(event, callback) {
+			if (typeof event === 'string' && typeof callback === 'function') {
+				if (!subscribers.hasOwnProperty(event)) {
+					subscribers[event] = []
+				}
+				subscribers[event].push(callback)
+			}
+		}
+	}
+
+	return new PubSub()
 }));
