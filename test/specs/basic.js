@@ -23,5 +23,9 @@
 		it('should have a function called sub', function() {
 			expect(typeof pubsub.sub === 'function').toBe(true)
 		})
+
+		it('should have a function called unsub', function() {
+			expect(typeof pubsub.unsub === 'function').toBe(true)
+		})
 	})
 }));

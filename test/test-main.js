@@ -29,6 +29,7 @@ require([
 			, 'specs/no-data-events'
 			, 'specs/multiple-subscribers-same-event'
 			, 'specs/multiple-subscribers-different-events'
+			, 'specs/unsubscription'
 		], function() {
 			jasmineEnv.execute()
 		})

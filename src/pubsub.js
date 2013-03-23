@@ -51,6 +51,25 @@
 				throw new Error('pubsub.sub requires a string and a function')
 			}
 		}
+
+		this.unsub = function(event, callback) {
+			if (event
+				&& callback
+				&& typeof event === 'string'
+				&& typeof callback === 'function')
+			{
+				if (subscribers.hasOwnProperty(event)) {
+					for (var i = 0; i < subscribers[event].length; i++) {
+						if (subscribers[event][i] === callback) {
+							subscribers[event][i] = function() {}
+						}
+					}
+				}
+
+			} else {
+				throw new Error('pubsub.sub requires a string and a function')
+			}
+		}
 	}
 
 	return new PubSub()
