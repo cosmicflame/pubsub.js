@@ -29,5 +29,23 @@
 			pubsub.pub('test-event-empty-2')
 			expect(testSubscriber).not.toHaveBeenCalledWith(undefined)
 		})
+
+		it('should replace null with {}', function() {
+			pubsub.sub('test-event-empty-3', testSubscriber)
+			pubsub.pub('test-event-empty-3', null)
+			expect(testSubscriber).toHaveBeenCalledWith({})
+		})
+
+		it('should replace undefined with {}', function() {
+			pubsub.sub('test-event-empty-3', testSubscriber)
+			pubsub.pub('test-event-empty-3', undefined)
+			expect(testSubscriber).toHaveBeenCalledWith({})
+		})
+
+		it('should replace NaN with {}', function() {
+			pubsub.sub('test-event-empty-3', testSubscriber)
+			pubsub.pub('test-event-empty-3', NaN)
+			expect(testSubscriber).toHaveBeenCalledWith({})
+		})
 	})
 }));
