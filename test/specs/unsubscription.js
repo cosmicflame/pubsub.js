@@ -11,7 +11,7 @@
 		root.specsUnsubscription = factory(root.jasmine, root.sinon, root.pubsub);
 	}
 }(this, function(jasmine, sinon, pubsub) {
-	describe('pubsub should handle unsubscription', function() {
+	describe('unsubscription from events', function() {
 
 		var testSubscriber
 
@@ -35,6 +35,20 @@
 			pubsub.pub('test-event-delete-2')
 
 			expect(testSubscriber).not.toHaveBeenCalled()
+		})
+
+		it('should be idempotent', function() {
+			expect(function() {
+				pubsub.sub('test-event-delete-3', testSubscriber)
+				pubsub.unsub('test-event-delete-3', testSubscriber)
+				pubsub.unsub('test-event-delete-3', testSubscriber)
+			}).not.toThrow()
+		})
+
+		it('should be safe when you\'re not yet subscribed', function() {
+			expect(function() {
+				pubsub.unsub('test-event-delete-3', testSubscriber)
+			}).not.toThrow()
 		})
 	})
 }));
