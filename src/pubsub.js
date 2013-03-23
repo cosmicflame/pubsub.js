@@ -13,20 +13,36 @@
 
 		var subscribers = {}
 
+		/**
+		 * Publish an event.
+		 * @param eventName  The string name of the event.
+		 * @param data  Data object to pass to subscribers.  Can be undefined.
+		 */
 		this.pub = function(eventName, data) {
-			if (subscribers.hasOwnProperty(eventName)) {
-				subscribers[eventName].forEach(function(callback) {
-					callback(data)
-				})
+			if (eventName && typeof eventName === 'string') {
+				data = data || {}
+				if (subscribers.hasOwnProperty(eventName)) {
+					subscribers[eventName].forEach(function(callback) {
+						callback(data)
+					})
+				}
+			} else {
+				throw new Error('pubsub.pub requires a string and an optional function')
 			}
 		}
 
 		this.sub = function(event, callback) {
-			if (typeof event === 'string' && typeof callback === 'function') {
+			if (event
+				&& callback
+				&& typeof event === 'string'
+				&& typeof callback === 'function')
+			{
 				if (!subscribers.hasOwnProperty(event)) {
 					subscribers[event] = []
 				}
 				subscribers[event].push(callback)
+			} else {
+				throw new Error('pubsub.sub requires a string and a function')
 			}
 		}
 	}

@@ -11,7 +11,7 @@
 		root.specsSingleEvent = factory(root.jasmine, root.sinon, root.pubsub);
 	}
 }(this, function(jasmine, sinon, pubsub) {
-	describe('subscribing to and publishing a single event', function() {
+	describe('when subscribing to and publishing a single event, pubsub', function() {
 		var testSubscriber;
 
 		beforeEach(function() {

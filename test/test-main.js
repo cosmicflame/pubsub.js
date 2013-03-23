@@ -25,6 +25,8 @@ require([
 		require([
 			'specs/basic'
 			, 'specs/single-event'
+			, 'specs/error-handling'
+			, 'specs/no-data-events'
 		], function() {
 			jasmineEnv.execute()
 		})

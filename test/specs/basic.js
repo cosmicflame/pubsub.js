@@ -11,7 +11,7 @@
 		root.specsBasic = factory(root.jasmine, root.sinon, root.pubsub);
 	}
 }(this, function(jasmine, sinon, pubsub) {
-	describe('pubsub basic functionality', function() {
+	describe('the pubsub variable', function() {
 		it('should be an object', function() {
 			expect(typeof pubsub === 'object').toBe(true)
 		})
