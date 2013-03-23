@@ -35,5 +35,7 @@ pubsub.pub('event-name', data)
   data should be an object to pass to all subscribers, e.g. {foo: 'bar'}
 
 To unsubscribe from an event, call:
-TODO
+pubsub.unsub('event-name', callback)
+  'event-name' should be a string
+  callback should be a function.
 
