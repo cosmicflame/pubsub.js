@@ -27,6 +27,8 @@ require([
 			, 'specs/single-event'
 			, 'specs/error-handling'
 			, 'specs/no-data-events'
+			, 'specs/multiple-subscribers-same-event'
+			, 'specs/multiple-subscribers-different-events'
 		], function() {
 			jasmineEnv.execute()
 		})
