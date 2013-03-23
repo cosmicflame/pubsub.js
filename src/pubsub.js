@@ -46,7 +46,9 @@
 				if (!subscribers.hasOwnProperty(event)) {
 					subscribers[event] = []
 				}
-				subscribers[event].push(callback)
+				if (subscribers[event].indexOf(callback) === -1) {
+					subscribers[event].push(callback)
+				}
 			} else {
 				throw new Error('pubsub.sub requires a string and a function')
 			}
