@@ -1,6 +1,6 @@
 //Load require.js config files
 require([
-	'../require-test-config'
+	'require-test-config'
 ], function() {
 
 	//Kick off Jasmine tests
