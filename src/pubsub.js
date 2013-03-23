@@ -31,6 +31,12 @@
 			}
 		}
 
+		/**
+		 * Subscribe to an event.
+		 * @param event  The string name of the event to listen for.
+		 * @param callback  Function to call when event happens.
+		 * Will be passed data object.
+		 */
 		this.sub = function(event, callback) {
 			if (event
 				&& callback
