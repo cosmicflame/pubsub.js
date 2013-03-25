@@ -40,6 +40,15 @@
 		env.specFilter = function(spec) {
 			return htmlReporter.specFilter(spec)
 		}
+		
+		describe('basic test setup', function() {
+			it('should not have require', function() {
+				expect(typeof require).toBe("undefined")
+			})
+			it('should not have define', function() {
+				expect(typeof define).toBe("undefined")
+			})
+		})
 		env.execute()
 	</script>
 </body>
