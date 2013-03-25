@@ -32,6 +32,16 @@ require([
 			, 'specs/unsubscription'
 			, 'specs/subscription-idempotence'
 		], function() {
+
+			describe('AMD test setup', function() {
+				it('should have require', function() {
+					expect(typeof require).toBe("function")
+				})
+				it('should have define', function() {
+					expect(typeof define).toBe("function")
+				})
+			})
+
 			jasmineEnv.execute()
 		})
 	})
