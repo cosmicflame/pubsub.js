@@ -1,5 +1,8 @@
-// Pattern from https://github.com/umdjs/umd - amdWeb.js
-
+/*
+ * PubSub.js by Brian Beckett
+ * https://github.com/cosmicflame/pubsub.js
+ * Released under the MIT license
+ */
 ; (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
