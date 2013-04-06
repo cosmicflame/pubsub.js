@@ -57,6 +57,11 @@
 			}
 		}
 
+		/**
+		 * Unsubscribe from an event
+		 * @param event  The string name of the event to unsubscribe from.
+		 * @param callback  Function that's currently subscribed to event and should be unsubscribed
+		 */
 		this.unsub = function(event, callback) {
 			if (event
 				&& callback
