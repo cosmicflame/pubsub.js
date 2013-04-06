@@ -42,9 +42,9 @@
 		 */
 		this.sub = function(event, callback) {
 			if (event
-				&& callback
-				&& typeof event === 'string'
-				&& typeof callback === 'function')
+			    && callback
+			    && typeof event === 'string'
+			    && typeof callback === 'function')
 			{
 				if (!subscribers.hasOwnProperty(event)) {
 					subscribers[event] = []
@@ -64,9 +64,9 @@
 		 */
 		this.unsub = function(event, callback) {
 			if (event
-				&& callback
-				&& typeof event === 'string'
-				&& typeof callback === 'function')
+			    && callback
+			    && typeof event === 'string'
+			    && typeof callback === 'function')
 			{
 				if (subscribers.hasOwnProperty(event)) {
 					for (var i = 0; i < subscribers[event].length; i++) {
@@ -75,7 +75,6 @@
 						}
 					}
 				}
-
 			} else {
 				throw new Error('pubsub.sub requires a string and a function')
 			}
