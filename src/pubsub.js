@@ -1,5 +1,6 @@
 /*
  * PubSub.js by Brian Beckett
+ * Version 1.0.0
  * https://github.com/cosmicflame/pubsub.js
  * Released under the MIT license
  */
