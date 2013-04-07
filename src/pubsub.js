@@ -1,6 +1,6 @@
 /*
  * PubSub.js by Brian Beckett
- * Version 1.0.0
+ * Version 1.0.1
  * https://github.com/cosmicflame/pubsub.js
  * Released under the MIT license
  */
@@ -31,7 +31,7 @@
 					})
 				}
 			} else {
-				throw new Error('pubsub.pub requires a string and an optional function')
+				throw new Error('pubsub.pub requires a string and an optional data param')
 			}
 		}
 
